@@ -20,10 +20,7 @@ public class UsersController {
 	private UsersService usersService;
 	
 	@RequestMapping("/users/{url}")
-	public ModelAndView signup_FormAndSignin_Form(@PathVariable String url){
-		ModelAndView mView = new ModelAndView("/users/"+url);
-		return mView;
-	}
+	public void signup_FormAndSignin_Form(@PathVariable String url){}
 	
 	@RequestMapping("/users/signup")
 	public String signUp(@ModelAttribute UsersDto dto){
