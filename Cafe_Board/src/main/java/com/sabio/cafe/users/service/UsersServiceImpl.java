@@ -37,7 +37,6 @@ public class UsersServiceImpl implements UsersService{
 		ModelAndView mView = new ModelAndView();
 		UsersDto dto = usersDao.getData(id);
 		mView.addObject("dto", dto);
-		mView.setViewName("/users/private/info");
 		return mView;
 	}
 
