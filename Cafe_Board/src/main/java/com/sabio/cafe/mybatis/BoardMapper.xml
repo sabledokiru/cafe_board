@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+	<select id="getList" resultType="boardDto">
+		SELECT num, writer, title, content, viewCount, regdate
+		FROM cafe_board
+		ORDER BY num DESC
+	</select>
+	<insert id="insert" parameterType="boardDto" >
+		INSERT INTO cafe_board (num, writer, title, content, viewCount, regdate)
+		VALUES(cafe_board_seq.NEXTVAL, #{writer},#{title},#{content},view_count_seq.NEXTVAL, SYSDATE)
+	</insert>
+</mapper>
