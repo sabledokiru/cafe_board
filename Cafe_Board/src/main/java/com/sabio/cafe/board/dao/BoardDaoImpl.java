@@ -38,8 +38,8 @@ public class BoardDaoImpl implements BoardDao{
 	}
 
 	@Override
-	public void update(int num) {
-		session.update("board.update", num);
+	public void update(BoardDto dto) {
+		session.update("board.update", dto);
 		
 	}
 

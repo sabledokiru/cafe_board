@@ -55,4 +55,10 @@ public class BoardController {
 		return mView;
 	}
 	
+	@RequestMapping("/cafe/private/update")
+	public String update(@ModelAttribute BoardDto dto){
+		boardService.update(dto);
+		return "redirect:/cafe/list.do";
+	}
+	
 }

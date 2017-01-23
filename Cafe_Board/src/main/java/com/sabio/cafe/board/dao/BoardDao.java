@@ -10,7 +10,7 @@ public interface BoardDao {
 	public List<BoardDto> getList();
 	public BoardDto getData(int num);
 	public void increaseViewCount(int num);
-	public void update(int num);
+	public void update(BoardDto dto);
 	public void delete(int num);
 	
 }

@@ -21,8 +21,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public void update(int num) {
-		boardDao.update(num);
+	public void update(BoardDto dto) {
+		boardDao.update(dto);
 		
 	}
 
