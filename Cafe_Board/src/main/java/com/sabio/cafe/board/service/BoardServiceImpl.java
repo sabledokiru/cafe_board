@@ -22,7 +22,7 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public void update(int num) {
-		// TODO Auto-generated method stub
+		boardDao.update(num);
 		
 	}
 
@@ -52,6 +52,14 @@ public class BoardServiceImpl implements BoardService{
 	public boolean isValid(BoardDto dto) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public ModelAndView updateForm(int num) {
+		BoardDto dto = boardDao.getData(num);
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("dto",dto);
+		return mView;
 	}
 
 }

@@ -39,7 +39,7 @@ public class BoardDaoImpl implements BoardDao{
 
 	@Override
 	public void update(int num) {
-		// TODO Auto-generated method stub
+		session.update("board.update", num);
 		
 	}
 

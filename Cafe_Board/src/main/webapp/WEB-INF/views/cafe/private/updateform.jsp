@@ -33,7 +33,7 @@
 		</tr>
 	</table>
 	
-	<textarea name="ir1" id="ir1" style="width:766px;height:412px;display:none">${dto.content }</textarea>
+	<textarea name="content" id="ir1" style="width:766px;height:412px;display:none">${dto.content }</textarea>
 	<div>
 		<input type="button" onclick="submitContents(this);" value="수정확인" />
 	</div>	

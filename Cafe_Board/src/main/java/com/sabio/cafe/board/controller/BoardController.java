@@ -48,6 +48,11 @@ public class BoardController {
 		return "redirect:/cafe/list.do";
 	}
 	
-
+	@RequestMapping("/cafe/private/updateform")
+	public ModelAndView updateform(@RequestParam int num){
+		ModelAndView mView = boardService.updateForm(num);
+		mView.setViewName("cafe/private/updateform");
+		return mView;
+	}
 	
 }
