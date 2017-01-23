@@ -61,4 +61,7 @@ public class BoardController {
 		return "redirect:/cafe/list.do";
 	}
 	
+	
+	
+	
 }
