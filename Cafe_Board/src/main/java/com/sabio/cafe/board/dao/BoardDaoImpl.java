@@ -22,7 +22,6 @@ public class BoardDaoImpl implements BoardDao{
 
 	@Override
 	public List<BoardDto> getList() {
-		
 		List<BoardDto> list = session.selectList("board.getList");
 		return list;
 	}
