@@ -24,18 +24,14 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/cafe/private/insertform")
-	public ModelAndView insertForm(){
-		
-		ModelAndView mView = new ModelAndView();
-		mView.setViewName("cafe/private/insertform");
-		return mView;
+	public String insertForm(){
+		return "cafe/private/insertform";
 	}
 	
 	@RequestMapping("/cafe/private/insert")
 	public String insert(@ModelAttribute BoardDto dto){
 		boardService.insert(dto);
-		
-		return "redirect:cafe/list.do";
+		return "redirect:/cafe/list.do";
 		
 	}
 }

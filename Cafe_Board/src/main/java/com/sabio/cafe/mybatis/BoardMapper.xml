@@ -14,6 +14,7 @@
 	</select>
 	<insert id="insert" parameterType="boardDto" >
 		INSERT INTO cafe_board (num, writer, title, content, viewCount, regdate)
-		VALUES(cafe_board_seq.NEXTVAL, #{writer},#{title},#{content},view_count_seq.NEXTVAL, SYSDATE)
+		VALUES(cafe_board_seq.NEXTVAL, #{writer},#{title},#{content},#{viewCount}, SYSDATE)
 	</insert>
+	
 </mapper>
