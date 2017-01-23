@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8"/>
 <title>views/cafe/detail.jsp</title>
+<script>
+	function deleteCheck(){
+		var isDelete=confirm("글을 삭제 하시겠습니까?");
+		if(isDelete){
+			location.href="private/delete.do?num=${dto.num}";
+		}
+	}
+</script>
 <style>
 	.content{ 
 		border: 1px solid blue;
@@ -30,6 +38,7 @@
 		border-bottom: 2px solid green;
 	}
 </style>
+
 </head>
 <body>
 <h3>상세글 내용 페이지</h3>
@@ -96,6 +105,9 @@
 </div>
 <script src="${pageContext.request.contextPath }/resource/js/jquery-3.1.1.js"></script>
 <script>
+
+
+
 	var isLogin=${isLogin};
 	
 	//덧글 전송 이벤트가 일어 났을때 실행할 함수 등록 
@@ -130,13 +142,7 @@
 			.slideToggle();
 		}
 	});
-	
-	function deleteCheck(){
-		var isDelete=confirm("글을 삭제 하시겠습니까?");
-		if(isDelete){
-			location.href="private/delete.do?num=${dto.num}";
-		}
-	}
+
 </script>
 </body>
 </html>

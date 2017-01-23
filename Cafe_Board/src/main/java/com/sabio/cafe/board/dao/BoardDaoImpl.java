@@ -38,15 +38,14 @@ public class BoardDaoImpl implements BoardDao{
 	}
 
 	@Override
-	public void update(BoardDto dto) {
+	public void update(int num) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void delete(int num) {
-		// TODO Auto-generated method stub
-		
+		session.delete("board.delete", num);
 	}
 
 }

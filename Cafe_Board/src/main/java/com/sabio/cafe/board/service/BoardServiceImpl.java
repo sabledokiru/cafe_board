@@ -21,15 +21,14 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public void update(BoardDto dto) {
+	public void update(int num) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(String id) {
-		// TODO Auto-generated method stub
-		
+	public void delete(int num) {
+		boardDao.delete(num);
 	}
 
 	@Override

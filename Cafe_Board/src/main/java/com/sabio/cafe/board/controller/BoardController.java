@@ -40,6 +40,14 @@ public class BoardController {
 		ModelAndView mView = boardService.getData(num);
 		mView.setViewName("cafe/detail");
 		return mView;
-		
 	}
+	
+	@RequestMapping("/cafe/private/delete")
+	public String delete(@RequestParam int num){
+		boardService.delete(num);
+		return "redirect:/cafe/list.do";
+	}
+	
+
+	
 }

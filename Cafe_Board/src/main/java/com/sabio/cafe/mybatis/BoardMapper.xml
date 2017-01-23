@@ -29,4 +29,9 @@
 		WHERE num=#{num}
 	</update>
 	
+	<delete id="delete" parameterType="int">
+		DELETE FROM cafe_board
+		WHERE num=#{num}
+	</delete>
+	
 </mapper>
