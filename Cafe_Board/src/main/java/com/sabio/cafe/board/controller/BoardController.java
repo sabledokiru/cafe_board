@@ -18,8 +18,9 @@ public class BoardController {
 	private BoardService boardService;
 	
 	@RequestMapping("cafe/list")
-	public ModelAndView list(){
-		ModelAndView mView = boardService.getList();
+	public ModelAndView list(@RequestParam(defaultValue="1") int pageNum){
+
+		ModelAndView mView = boardService.getList(pageNum);
 		mView.setViewName("cafe/list");
 		return mView;
 	}

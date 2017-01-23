@@ -7,10 +7,13 @@ public class BoardDto {
 	private String content;
 	private int viewCount;
 	private String regdate;
-	
+	private int startRowNum;
+	private int endRowNum;
+
 	public BoardDto(){}
 
-	public BoardDto(int num, String writer, String title, String content, int viewCount, String regdate) {
+	public BoardDto(int num, String writer, String title, String content, int viewCount, String regdate,
+			int startRowNum, int endRowNum) {
 		super();
 		this.num = num;
 		this.writer = writer;
@@ -18,6 +21,8 @@ public class BoardDto {
 		this.content = content;
 		this.viewCount = viewCount;
 		this.regdate = regdate;
+		this.startRowNum = startRowNum;
+		this.endRowNum = endRowNum;
 	}
 
 	public int getNum() {
@@ -67,4 +72,24 @@ public class BoardDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+
+	public int getStartRowNum() {
+		return startRowNum;
+	}
+
+	public void setStartRowNum(int startRowNum) {
+		this.startRowNum = startRowNum;
+	}
+
+	public int getEndRowNum() {
+		return endRowNum;
+	}
+
+	public void setEndRowNum(int endRowNum) {
+		this.endRowNum = endRowNum;
+	}
+
+	
+	
+	
 }

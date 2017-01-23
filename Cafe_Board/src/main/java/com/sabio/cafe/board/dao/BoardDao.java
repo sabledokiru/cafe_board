@@ -7,10 +7,11 @@ import com.sabio.cafe.board.dto.BoardDto;
 public interface BoardDao {
 	
 	public void insert(BoardDto dto);
-	public List<BoardDto> getList();
+	public List<BoardDto> getList(BoardDto dto);
 	public BoardDto getData(int num);
 	public void increaseViewCount(int num);
 	public void update(BoardDto dto);
 	public void delete(int num);
+	public int getCount();
 	
 }

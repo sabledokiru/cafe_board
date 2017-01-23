@@ -21,8 +21,8 @@ public class BoardDaoImpl implements BoardDao{
 	}
 
 	@Override
-	public List<BoardDto> getList() {
-		List<BoardDto> list = session.selectList("board.getList");
+	public List<BoardDto> getList(BoardDto dto) {
+		List<BoardDto> list = session.selectList("board.getList", dto);
 		return list;
 	}
 
@@ -46,6 +46,12 @@ public class BoardDaoImpl implements BoardDao{
 	@Override
 	public void delete(int num) {
 		session.delete("board.delete", num);
+	}
+
+	@Override
+	public int getCount() {
+		int count = session.selectOne("board.getCount");
+		return count;
 	}
 
 }

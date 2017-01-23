@@ -10,7 +10,7 @@ public interface BoardService {
 	public void update(BoardDto dto);
 	public void delete(int num);
 	public ModelAndView getData(int num);
-	public ModelAndView getList();
+	public ModelAndView getList(int pageNum);
 	public boolean isValid(BoardDto dto);
 	public ModelAndView updateForm(int num);
 }
