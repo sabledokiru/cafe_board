@@ -28,14 +28,13 @@ public class BoardDaoImpl implements BoardDao{
 
 	@Override
 	public BoardDto getData(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		BoardDto dto = session.selectOne("board.getData", num);
+		return dto;
 	}
 
 	@Override
 	public void increaseViewCount(int num) {
-		// TODO Auto-generated method stub
-		
+		session.update("board.increaseViewCount", num);
 	}
 
 	@Override
