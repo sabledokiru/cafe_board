@@ -1,5 +1,7 @@
 package com.sabio.cafe.board.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,9 +20,9 @@ public class BoardController {
 	private BoardService boardService;
 	
 	@RequestMapping("cafe/list")
-	public ModelAndView list(@RequestParam(defaultValue="1") int pageNum){
+	public ModelAndView list(HttpServletRequest request, @RequestParam(defaultValue="1") int pageNum){
 
-		ModelAndView mView = boardService.getList(pageNum);
+		ModelAndView mView = boardService.getList(request, pageNum);
 		mView.setViewName("cafe/list");
 		return mView;
 	}
