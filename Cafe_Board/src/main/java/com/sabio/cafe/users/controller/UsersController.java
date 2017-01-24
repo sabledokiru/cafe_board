@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,11 +58,9 @@ public class UsersController {
 	}
 	
 	@RequestMapping("/users/private/{url}")
-	public ModelAndView infoAndUpdateForm(@PathVariable String url,HttpSession session){
+	public  void infoAndUpdateForm(HttpSession session,Model model){
 		String id = (String)session.getAttribute("id");
-		ModelAndView mView = usersService.getData(id);
-		mView.setViewName("/users/private/"+url);
-		return mView;
+		model.addAttribute("dto", usersService.getData(id));
 	}
 	
 	@RequestMapping("/users/private/update")

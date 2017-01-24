@@ -32,12 +32,9 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public ModelAndView getData(String id) {
+	public UsersDto getData(String id) {
 		
-		ModelAndView mView = new ModelAndView();
-		UsersDto dto = usersDao.getData(id);
-		mView.addObject("dto", dto);
-		return mView;
+		return usersDao.getData(id);
 	}
 
 	@Override

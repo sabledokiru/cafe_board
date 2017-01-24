@@ -21,9 +21,7 @@ public class BoardController {
 	
 	@RequestMapping("cafe/list")
 	public ModelAndView list(HttpServletRequest request, @RequestParam(defaultValue="1") int pageNum){
-
 		ModelAndView mView = boardService.getList(request, pageNum);
-		mView.setViewName("cafe/list");
 		return mView;
 	}
 	
@@ -41,7 +39,6 @@ public class BoardController {
 	@RequestMapping("/cafe/detail")
 	public ModelAndView detail(@RequestParam int num){
 		ModelAndView mView = boardService.getData(num);
-		mView.setViewName("cafe/detail");
 		return mView;
 	}
 	
@@ -53,8 +50,7 @@ public class BoardController {
 	
 	@RequestMapping("/cafe/private/updateform")
 	public ModelAndView updateform(@RequestParam int num){
-		ModelAndView mView = boardService.updateForm(num);
-		mView.setViewName("cafe/private/updateform");
+		ModelAndView mView = boardService.getData(num);
 		return mView;
 	}
 	
@@ -63,8 +59,5 @@ public class BoardController {
 		boardService.update(dto);
 		return "redirect:/cafe/list.do";
 	}
-	
-	
-	
-	
+
 }

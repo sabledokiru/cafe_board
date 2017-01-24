@@ -14,5 +14,5 @@ public interface BoardService {
 	public ModelAndView getData(int num);
 	public ModelAndView getList(HttpServletRequest request, int pageNum);
 	public boolean isValid(BoardDto dto);
-	public ModelAndView updateForm(int num);
+	public void updateForm(int num);
 }

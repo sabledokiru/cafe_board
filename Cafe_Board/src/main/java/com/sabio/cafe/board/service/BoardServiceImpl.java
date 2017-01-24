@@ -86,7 +86,6 @@ public class BoardServiceImpl implements BoardService{
 		if(totalPageCount < endPageNum){
 			endPageNum=totalPageCount; //보정해준다. 
 		}
-		
 		dto.setStartRowNum(startRowNum);
 		dto.setEndRowNum(endRowNum);
 		
@@ -101,6 +100,7 @@ public class BoardServiceImpl implements BoardService{
 		return mView;
 	}
 
+	
 	@Override
 	public boolean isValid(BoardDto dto) {
 		// TODO Auto-generated method stub
@@ -108,11 +108,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public ModelAndView updateForm(int num) {
-		BoardDto dto = boardDao.getData(num);
-		ModelAndView mView = new ModelAndView();
-		mView.addObject("dto",dto);
-		return mView;
+	public void updateForm(int num) {
+		boardDao.getData(num);
 	}
 
 }

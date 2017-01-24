@@ -8,7 +8,7 @@ public interface UsersService {
 	public void insert(UsersDto dto);
 	public void update(UsersDto dto);
 	public void delete(String id);
-	public ModelAndView getData(String id);
+	public UsersDto getData(String id);
 	public ModelAndView getList();
 	public boolean isValid(UsersDto dto);
 }
