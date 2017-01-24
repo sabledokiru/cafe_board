@@ -8,6 +8,7 @@ import com.sabio.cafe.shop.service.ShopService;
 @Controller
 public class ShopController {
 
+	
 	@Autowired
 	private ShopService shopService;
 }
