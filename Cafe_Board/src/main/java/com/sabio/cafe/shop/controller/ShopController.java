@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.sabio.cafe.shop.service.ShopService;
 
@@ -26,6 +28,34 @@ public class ShopController {
 		info.add("열심히 일한 당신 기회를 놓치지 마세욧!");
 		
 		model.addAttribute("info", info);
+	}
+	
+	@RequestMapping("/shop/depositform")
+	public void depositForm(){
+
+	}
+	
+	// 입금 요청 처리
+	@RequestMapping("/shop/deposit")
+	public String deposit(@RequestParam String id, @RequestParam int cash){
+		// ShopService 객체를 이용해서 입금 작업을 한다.
+		shopService.deposit(id, cash);
+		return "redirect:/shop/index.do";
+	}
+	
+	@RequestMapping("/shop/list")
+	public void list(){
+		
+	}
+	
+	@RequestMapping("/shop/buy")
+	public ModelAndView buy(@RequestParam String id, @RequestParam int price){
+		
+		shopService.buy(id, price);
+		ModelAndView mView = new ModelAndView();
+		mView.addObject("price", price);
+		mView.setViewName("shop/buyresult");
+		return mView;
 	}
 	
 	

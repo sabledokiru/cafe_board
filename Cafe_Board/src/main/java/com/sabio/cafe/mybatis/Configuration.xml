@@ -13,6 +13,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="com/sabio/cafe/mybatis/UsersMapper.xml"/>
 		<mapper resource="com/sabio/cafe/mybatis/BoardMapper.xml"/>
+		<mapper resource="com/sabio/cafe/mybatis/ShopMapper.xml"/>
 	</mappers>
 </configuration>
 
