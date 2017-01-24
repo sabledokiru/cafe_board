@@ -2,6 +2,7 @@ package com.sabio.cafe.shop.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sabio.cafe.shop.dao.ShopDao;
 
@@ -19,6 +20,7 @@ public class ShopServiceImpl implements ShopService{
 
 	// 가상의 구입 작업을 하는 method
 	@Override
+	@Transactional
 	public void buy(String id, int price) {
 	
 		// 1. 구입 금액의 10%를 포인트로 환산해서 적립하고
