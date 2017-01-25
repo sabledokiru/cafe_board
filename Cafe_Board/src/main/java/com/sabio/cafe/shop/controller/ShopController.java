@@ -40,6 +40,7 @@ public class ShopController {
 	public String deposit(@RequestParam String id, @RequestParam int cash){
 		// ShopService 객체를 이용해서 입금 작업을 한다.
 		shopService.deposit(id, cash);
+
 		return "redirect:/shop/index.do";
 	}
 	
@@ -50,7 +51,6 @@ public class ShopController {
 	
 	@RequestMapping("/shop/buy")
 	public ModelAndView buy(@RequestParam String id, @RequestParam int price){
-		
 		shopService.buy(id, price);
 		ModelAndView mView = new ModelAndView();
 		mView.addObject("price", price);
