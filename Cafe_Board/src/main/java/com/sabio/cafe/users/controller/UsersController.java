@@ -22,16 +22,16 @@ public class UsersController {
 	private UsersService usersService;
 	
 	@RequestMapping("/users/{url}")
-	public void signup_FormAndSignin_Form(@PathVariable String url){}
+	public void authsignup_FormAndSignin_Form(@PathVariable String url){}
 	
 	@RequestMapping("/users/signup")
-	public String signUp(@ModelAttribute UsersDto dto){
+	public String authsignUp(@ModelAttribute UsersDto dto){
 		usersService.insert(dto);
 		return "redirect:/home.do";
 	}
 	
 	@RequestMapping("/users/signin")
-	public ModelAndView signin(HttpSession session, @RequestParam String uri, @ModelAttribute UsersDto dto){
+	public ModelAndView authsignin(HttpSession session, @RequestParam String uri, @ModelAttribute UsersDto dto){
 		ModelAndView mView = new ModelAndView();
 		boolean isValid=usersService.isValid(dto);
 		if(isValid){
@@ -48,7 +48,7 @@ public class UsersController {
 	}
 	
 	@RequestMapping("/users/signout")
-	public ModelAndView signOut(HttpSession session, @RequestParam String uri){
+	public ModelAndView authsignOut(HttpSession session, @RequestParam String uri){
 		session.invalidate();
 		ModelAndView mView = new ModelAndView();
 		mView.addObject("msg", "로그 아웃 되었습니다.");
@@ -58,18 +58,18 @@ public class UsersController {
 	}
 	
 	@RequestMapping("/users/private/{url}")
-	public  void infoAndUpdateForm(HttpSession session,Model model){
+	public  void authinfoAndUpdateForm(HttpSession session,Model model){
 		String id = (String)session.getAttribute("id");
 		model.addAttribute("dto", usersService.getData(id));
 	}
 	
 	@RequestMapping("/users/private/update")
-	public String update(UsersDto dto){
+	public String authupdate(UsersDto dto){
 		usersService.update(dto);
 		return "redirect:/users/private/info.do";
 	}
 	@RequestMapping("users/private/delete")
-	public String delete(HttpSession session){
+	public String authdelete(HttpSession session){
 		String id = (String)session.getAttribute("id");
 		usersService.delete(id);
 		session.invalidate();

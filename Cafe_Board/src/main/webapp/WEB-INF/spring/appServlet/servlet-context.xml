@@ -92,7 +92,8 @@
 			</beans:props>
 		</beans:property>
 	</beans:bean>
-	
+	<!--  annotation 기반으로 aop를 구현 하기 위한 설정 -->
+	<aop:aspectj-autoproxy/>
 </beans:beans>
 
 
